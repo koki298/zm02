@@ -30,3 +30,7 @@ def gcd(x: int, y: int):
     """
     typer.echo(mathtools.gcd(x, y))
 
+@app.command()
+def lcm(m, n):
+    """最小公倍数"""
+    return m * n // gcd(m, n)
