@@ -31,6 +31,13 @@ def gcd(x: int, y: int):
     typer.echo(mathtools.gcd(x, y))
 
 @app.command()
-def lcm(m, n):
+def lcm(m: int, n:int):
     """最小公倍数"""
-    return m * n // gcd(m, n)
+    typer.echo(mathtools.lcm(m,n))
+
+@app.command()
+def fizzbuzz(x:int):
+    typer.echo(mathtools.fizzbuzz(x))
+
+    
+    

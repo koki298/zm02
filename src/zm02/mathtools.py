@@ -41,3 +41,13 @@ def is_prime(x):
         
     return True
 
+
+def fizzbuzz(x:int):  
+    if x % 15 == 0:
+        return ("3と5の倍数")
+    elif x % 3 == 0:
+        return ("3の倍数")
+    elif x % 5 == 0:
+        return ("5の倍数")
+    else:
+        return x
