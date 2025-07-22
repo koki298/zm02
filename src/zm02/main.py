@@ -4,6 +4,8 @@ import typer
 
 from zm02 import mathtools
 
+from . import demo
+
 app = typer.Typer()
 
 
@@ -39,5 +41,20 @@ def lcm(m: int, n:int):
 def fizzbuzz(x:int):
     typer.echo(mathtools.fizzbuzz(x))
 
+@ app.command()
+def hello(name: str = "Kouki"):
+    typer.echo(demo.hello(name))
     
-    
+
+
+
+
+
+@app.command()
+def movie():
+    """ランダムな洋画を表示します"""
+    result = demo.get_random_movie()
+    print(f"おすすめの洋画：{result}")
+
+if __name__ == "__main__":
+    app()
