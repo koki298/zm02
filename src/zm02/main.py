@@ -58,3 +58,23 @@ def movie():
 
 if __name__ == "__main__":
     app()
+
+
+
+
+
+
+@app.command()
+def encode():
+    """謎のカエサル暗号に変換します（import禁止ver）"""
+    text = input("🔐 入力してください：")
+    encoded = demo.caesar_code(text)
+    print("🧩 変換結果：", encoded)
+
+
+@app.command()
+def decode():
+    """🔓 カエサル暗号を元に戻します（importなし）"""
+    text = input("🔐 暗号文を入力してください：")
+    decoded = demo.decode_caesar(text)
+    print("🧩 元の文章：", decoded)

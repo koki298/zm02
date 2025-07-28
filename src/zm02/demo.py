@@ -41,3 +41,34 @@ def get_random_movie():
         "Everything Everywhere All At Once"
     ]
     return random.choice(movies)
+
+
+def caesar_code(text):
+    result = ""
+    for ch in text:
+        code = ord(ch)
+        if "A" <= ch <= "Z":
+            result += chr((code - ord("A") + 3) % 26 + ord("A"))
+        elif "a" <= ch <= "z":
+            result += chr((code - ord("a") + 3) % 26 + ord("a"))
+        elif "0" <= ch <= "9":
+            result += str(9 - int(ch))
+        else:
+            result += ch
+    return result
+
+
+def decode_caesar(text):
+    result = ""
+    for ch in text:
+        code = ord(ch)
+        if "A" <= ch <= "Z":
+            result += chr((code - ord("A") - 3) % 26 + ord("A"))
+        elif "a" <= ch <= "z":
+            result += chr((code - ord("a") - 3) % 26 + ord("a"))
+        elif "0" <= ch <= "9":
+            result += str(9 - int(ch))
+        else:
+            result += ch
+    return result
+
